@@ -1,6 +1,9 @@
 # pytive
 Bot用
+このプロジェクトはRabies1337様作Pytiveのフォークでございます。
+https://github.com/Rabies1337/pytive
 
+気が向いたら更新します。
 ## TODO
 - [x] 配信情報の取得
 - [x] コメント機能
