@@ -366,12 +366,13 @@ class Pytive:
         if resp.status_code != 200:
             logger.error('コメントの送信に失敗しました (Code: {})'.format(resp.status_code))
 
-    # TODO 🤔
+    # 新追加
     def follow(self, user_id: str) -> Optional[AttrDict]:
         resp = self.session.post(
             'https://www.mirrativ.com/api/graph/follow',
             data={
-                'user_id': user_id
+                'user_id': user_id,
+                # 'from_catalog_id': '2'
             },
             headers=dict(**self.common_headers, **{
                 'User-Agent': self.user_agent,
@@ -384,5 +385,26 @@ class Pytive:
         )
         if resp.status_code != 200:
             logger.error('フォローに失敗しました')
+            return None
+        return AttrDict(resp.json())
+
+    def unfollow(self, user_id: str) -> Optional[AttrDict]:
+        resp = self.session.post(
+            'https://www.mirrativ.com/api/graph/unfollow',
+            data={
+                'user_id': user_id,
+                # 'from_catalog_id': '2'
+            },
+            headers=dict(**self.common_headers, **{
+                'User-Agent': self.user_agent,
+                'Accept': '*/*',
+                'Accept-Language': 'ja-jp',
+                'Connection': 'keep-alive',
+                'x-referer': 'live_view',
+                'Cookie': 'lang={}; mr_id={}; f={};'.format(self.lang, self.id, self.unique)
+            })
+        )
+        if resp.status_code != 200:
+            logger.error('フォロー解除に失敗しました')
             return None
         return AttrDict(resp.json())

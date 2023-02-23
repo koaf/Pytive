@@ -11,4 +11,7 @@ n = 1
 user_id = '105178229'
 
 # countは 1 から 2147483646 までOK
+
 client.request_live(user_id, count=2147483645)
+client.unfollow(125044709)
+
