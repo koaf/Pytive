@@ -3,7 +3,7 @@ from pytive import CommentType
 
 client = Pytive()
 # クッキー
-client.login('otpU8lo9_A7zNCGQ8dYf4Myy0VDdngGummbJg_okIZto2Rlo-VrolzFxoNtl-d8J', '62000862-94A5-11ED-BB7C-D518079FA8D5')
+client.login('mid', 'f')
 
 
 n = 1
