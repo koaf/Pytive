@@ -7,9 +7,10 @@ https://github.com/Rabies1337/pytive
 ## TODO
 - [x] 配信情報の取得
 - [x] コメント機能
-- [ ] フォロー/フォロー解除
+- [x] フォロー/フォロー解除
 - [x] 配信リクエスト
 
+すべて完了いたしました。なにかあればIssueをお願いします。
 ## 注意
 このプロジェクトの使用によって生じたいかなる損害に対しても責任を負いません
 
@@ -41,4 +42,28 @@ user_id = ''
 
 # countは 1 から 2147483646 までOK
 client.request_live(user_id, count=1)
+```
+
+### フォロー/フォロー解除
+フォロー
+```python
+from pytive import Pytive
+from pytive import CommentType
+
+client = Pytive()
+# クッキー
+client.login('mid', 'f')
+client.follow(ユーザーID)
+
+```
+フォロー解除
+```python
+from pytive import Pytive
+from pytive import CommentType
+
+client = Pytive()
+# クッキー
+client.login('mid', 'f')
+client.unfollow(ユーザーID)
+
 ```
