@@ -5,6 +5,7 @@ from enum import Enum
 import requests
 import secrets
 import uuid
+import datetime
 
 from attrdict import AttrDict
 
@@ -205,6 +206,7 @@ class Pytive:
             params={
                 'live_id': live_id
             },
+
             headers=dict(**self.common_headers, **{
                 'User-Agent': self.user_agent,
                 'Accept': '*/*',
@@ -214,6 +216,8 @@ class Pytive:
                 'Cookie': 'lang={}; mr_id={}; f={};'.format(self.lang, self.id, self.unique)
             })
         )
+
+
         if resp.status_code != 200:
             return None
         return AttrDict(resp.json())
@@ -408,3 +412,19 @@ class Pytive:
             logger.error('フォロー解除に失敗しました')
             return None
         return AttrDict(resp.json())
+    
+    def comments(self, live_id: str) -> Optional[AttrDict]:
+
+        url = 'https://www.mirrativ.com/api/live/live_comments?live_id=' + live_id
+        res = requests.get(url,
+                             headers=dict(**self.common_headers, **{
+                'User-Agent': self.user_agent,
+                'Accept': '*/*',
+                'Accept-Language': 'ja-jp',
+                'Connection': 'keep-alive',
+                'x-referer': 'live_view',
+                'Cookie': 'lang={}; mr_id={}; f={};'.format(self.lang, self.id, self.unique)
+            }))
+        #print(res.text)
+        commentslist = res.text
+        return commentslist

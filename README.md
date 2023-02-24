@@ -6,7 +6,8 @@ https://github.com/Rabies1337/pytive
 気が向いたら更新します。
 ## TODO
 - [x] 配信情報の取得
-- [x] コメント機能
+- [x] コメント送信
+- [x] コメント読み込み
 - [x] フォロー/フォロー解除
 - [x] 配信リクエスト
 
@@ -34,6 +35,16 @@ live_id = ''
 
 client.join_live(live_id)
 client.comment(live_id, CommentType.NORMAL, 'pog')
+```
+### メッセージ読み込み
+```pyton
+from pytive import Pytive
+from pytive import CommentType
+
+client = Pytive()
+live_id = ''
+comment = client.comments(live_id)
+print(comment)
 ```
 ### ライブリクエスト
 ```python
