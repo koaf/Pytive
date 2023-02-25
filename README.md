@@ -78,3 +78,18 @@ client.login('mid', 'f')
 client.unfollow(ユーザーID)
 
 ```
+###プロフィール編集
+```python
+from pytive import Pytive 
+import pytive 
+client = Pytive()
+
+client.login('mr_id', 'f')
+
+name = 'name'
+description = '説明文'
+url = 'URL'
+paypal_username = 'Paypalメールアドレス(意味ないかも)'
+
+client.profiledit(name , description, url , paypal_username)
+```

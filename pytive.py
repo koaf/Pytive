@@ -428,3 +428,33 @@ class Pytive:
         #print(res.text)
         commentslist = res.text
         return commentslist
+    
+
+#新追加
+
+    def profiledit(self, name: str, description: str,imageurl: str, url: str, paypal_username: str):
+        if name is None:
+            return
+        links = '[{"url":"' + url + '"}]'
+        
+        resp = self.session.post(
+            'https://www.mirrativ.com/api/user/profile_edit',
+            data={
+                'name': name,
+                'description': description,
+                'links': links ,
+
+                ' paypal_username ' : paypal_username
+                # 'from_catalog_id': '2'
+            },
+            headers=dict(**self.common_headers, **{
+                'User-Agent': self.user_agent,
+                'Accept': '*/*',
+                'Accept-Language': 'ja-jp',
+                'Connection': 'keep-alive',
+                'x-referer': 'live_view',
+                'Cookie': 'lang={}; mr_id={}; f={};'.format(self.lang, self.id, self.unique)
+            })
+        )
+        if resp.status_code != 200:
+            print(resp.status_code)
