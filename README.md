@@ -78,7 +78,7 @@ client.login('mid', 'f')
 client.unfollow(ユーザーID)
 
 ```
-###プロフィール編集
+### プロフィール編集
 ```python
 from pytive import Pytive 
 import pytive 
