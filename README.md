@@ -1,5 +1,5 @@
 # pytive
-Bot用
+
 このプロジェクトはRabies1337様作Pytiveのフォークでございます。
 https://github.com/Rabies1337/pytive
 
