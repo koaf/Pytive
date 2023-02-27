@@ -1,9 +1,9 @@
 # pytive
 
-このプロジェクトはRabies1337様作Pytiveのフォークでございます。
+このプロジェクトはRabies1337様作Pytiveのフォークでございます。<br>
 https://github.com/Rabies1337/pytive
 
-気が向いたら更新します。
+注意：これは研究用、ソフト用であり荒らしやBotを助長するためのものではありません。
 ## TODO
 - [x] 配信情報の取得
 - [x] コメント送信
