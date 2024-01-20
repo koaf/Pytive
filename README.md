@@ -1,7 +1,5 @@
-# pytive
+# Pytive
 
-このプロジェクトはRabies1337様作Pytiveのフォークでございます。<br>
-https://github.com/Rabies1337/pytive
 
 ## TODO
 - [x] 配信情報の取得
