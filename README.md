@@ -35,7 +35,7 @@ client.join_live(live_id)
 client.comment(live_id, CommentType.NORMAL, 'pog')
 ```
 ### メッセージ読み込み
-```pyton
+```python
 from pytive import Pytive
 from pytive import CommentType
 
@@ -86,8 +86,14 @@ client.login('mr_id', 'f')
 
 name = 'name'
 description = '説明文'
+imageurl = ''
 url = 'URL'
 paypal_username = 'Paypalメールアドレス(意味ないかも)'
 
-client.profiledit(name , description, url , paypal_username)
+client.profiledit(name, description, imageurl, url, paypal_username)
+
+```
+
+#### 注意
+実行には有効なMirrativのクッキー（`mr_id`, `f`）や`live_id`/`user_id`が必要です。例では実際の値を入れてください。
 ```

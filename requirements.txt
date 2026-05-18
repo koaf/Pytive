@@ -1,6 +1,2 @@
 requests
-secrets
-uuid
-enum
-typing
-logging
+six

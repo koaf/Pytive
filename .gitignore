@@ -27,6 +27,11 @@
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
 
+README_test_failures.md
+test.py
+message_test.py
+comment_test.py
+
 # Gradle
 .idea/**/gradle.xml
 .idea/**/libraries
